@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script async src="https://platform.twitter.com/widgets.js"></script>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/estilo.css">
+
+	<script src="js/clashroyale.js"></script>
+
+	<!-- Referencia a Firebase para poder conectar la base de datos -->
+	<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+
+	<!-- Canal RSS -->
+	<link rel="alternate" title="RSS" href="rss/rss.xml" type="application/rss+xml" />
+
+	<title>L2Game. Clash Royale.</title>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50" class="fondoClashRoyale">
+
+	<!-- Barra de navegación -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<img class="img-responsive" src="img/L2Game.png" alt="Learn2Game"/>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="main.html">Inicio</a></li>
+					<li><p class="navbar-text">|</p></li>
+					<li><p class="navbar-text">Clash Royale <span class="glyphicon glyphicon-play"></span></p></li>
+					<li><a href="#portada">Portada</a></li>
+					<li><a href="#copa">Copa L2G</a></li>
+					<li><a href="#mazomes">Mazo del mes</a></li>
+					<li><a href="#galeria">Galería de mazos</a></li>
+					<li><a href="#solicitud-mazos">Solicitudes de mazos</a></li>
+					<li><p class="navbar-text">|</p></li>
+					<li><a href="l2minijuego.html">L2Minijuego</a></li> 
+					<li><a href="rss/rss.xml">RSS</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="botonLog"></li>
+					<li id="botonReg"></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br id="portada" />
+	<br/>
+
+	<!-- Cabecera Clash Royale -->
+	<img class="img-responsive img-rounded center-block" src="img/ClashRoyaleHead.jpg" alt="Cabecera Clash Royale"/>
+	<br/>
+
+	<!-- Novedades -->
+	<div class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1 class="colorBlanco">Novedades</h1>
+		</div>
+	</div>
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-4">
+				<a class="twitter-timeline" data-lang="es" data-width="500" data-height="693" data-theme="dark" href="https://twitter.com/ClashRoyale">Tweets by ClashRoyale</a>
+			</div>
+			<div class="col-md-8 thumbnail transparente">
+				<h3>¡Tras la "filtración" de la nueva carta tenemos el anuncio oficial de SuperCell de las nuevas 4 cartas!</h3>
+				<a href="https://twitter.com/ClashRoyale/status/792711129084661761">
+					<img src="img/ClashRoyaleNews.jpg" class="img-responsive img-rounded" alt="Novedades Clash Royale" width="600" height="600"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<!-- Copa L2G -->
+	<div id="copa" class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1>Copa L2G</h1>
+		</div>
+		<h3>¡Bienvenidos a la copa mensual de Learn2Game!</h3>
+		<br/>
+		<h2>Ranking Copa L2G</h2>
+	</div>
+	<br/>
+
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#grupoa">Grupo A</a></li>
+			<li><a data-toggle="tab" href="#grupob">Grupo B</a></li>
+			<li><a data-toggle="tab" href="#grupoc">Grupo C</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="grupoa" class="tab-pane fade in active">
+				<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th class="colorBlanco">
+							1er Puesto
+						</th>
+						<td class="colorBlanco">
+							Lanister
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							2º Puesto
+						</th>
+						<td class="colorBlanco">
+							Pwner21
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							3er Puesto
+						</th>
+						<td class="colorBlanco">
+							Sneaky
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							4º Puesto
+						</th>
+						<td class="colorBlanco">
+							JoseNefilimSnow
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							5º Puesto
+						</th>
+						<td class="colorBlanco">
+							Thepawerblack
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							6º Puesto
+						</th>
+						<td class="colorBlanco">
+							Sjglp
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							7º Puesto
+						</th>
+						<td class="colorBlanco">
+							JoseK
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							8º Puesto
+						</th>
+						<td class="colorBlanco">
+							LittleBuster
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							9º Puesto
+						</th>
+						<td class="colorBlanco">
+							TheAmericanDream
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							10º Puesto
+						</th>
+						<td class="colorBlanco">
+							Paco1234
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							11º Puesto
+						</th>
+						<td class="colorBlanco">
+							PokemonTrainer
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							12º Puesto
+						</th>
+						<td class="colorBlanco">
+							Eifren
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							13º Puesto
+						</th>
+						<td class="colorBlanco">
+							ArucasFlejeLag
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							14º Puesto
+						</th>
+						<td class="colorBlanco">
+							AmarillitoNo+
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							15º Puesto
+						</th>
+						<td class="colorBlanco">
+							Unnamed
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							16º Puesto
+						</th>
+						<td class="colorBlanco">
+							Kakariko
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="grupob" class="tab-pane fade">
+				<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th class="colorBlanco">
+							1er Puesto
+						</th>
+						<td class="colorBlanco">
+							Sannas
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							2º Puesto
+						</th>
+						<td class="colorBlanco">
+							Loquete21
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							3er Puesto
+						</th>
+						<td class="colorBlanco">
+							Javitocanario
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							4º Puesto
+						</th>
+						<td class="colorBlanco">
+							Pablogamer
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							5º Puesto
+						</th>
+						<td class="colorBlanco">
+							Slitheriner
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							6º Puesto
+						</th>
+						<td class="colorBlanco">
+							BronxFighter
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							7º Puesto
+						</th>
+						<td class="colorBlanco">
+							JosepPrime
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							8º Puesto
+						</th>
+						<td class="colorBlanco">
+							Serperior
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							9º Puesto
+						</th>
+						<td class="colorBlanco">
+							PikaPika
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							10º Puesto
+						</th>
+						<td class="colorBlanco">
+							Sarmiento
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							11º Puesto
+						</th>
+						<td class="colorBlanco">
+							SpainPwner
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							12º Puesto
+						</th>
+						<td class="colorBlanco">
+							MarineroDelaWeb
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							13º Puesto
+						</th>
+						<td class="colorBlanco">
+							ElColegaCanario
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							14º Puesto
+						</th>
+						<td class="colorBlanco">
+							Locoplaya
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							15º Puesto
+						</th>
+						<td class="colorBlanco">
+							Sanjigue
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							16º Puesto
+						</th>
+						<td class="colorBlanco">
+							Bruhder
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div id="grupoc" class="tab-pane fade">
+				<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th class="colorBlanco">
+							1er Puesto
+						</th>
+						<td class="colorBlanco">
+							Santiaguimer
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							2º Puesto
+						</th>
+						<td class="colorBlanco">
+							Proxy
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							3er Puesto
+						</th>
+						<td class="colorBlanco">
+							Bullet
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							4º Puesto
+						</th>
+						<td class="colorBlanco">
+							Dodger12
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							5º Puesto
+						</th>
+						<td class="colorBlanco">
+							LimitBreaker
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							6º Puesto
+						</th>
+						<td class="colorBlanco">
+							TheBigCan
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							7º Puesto
+						</th>
+						<td class="colorBlanco">
+							PapeleraLondinense
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							8º Puesto
+						</th>
+						<td class="colorBlanco">
+							Jipijapa
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							9º Puesto
+						</th>
+						<td class="colorBlanco">
+							Chamberga
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							10º Puesto
+						</th>
+						<td class="colorBlanco">
+							KinderBueno
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							11º Puesto
+						</th>
+						<td class="colorBlanco">
+							PimpFlaco
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							12º Puesto
+						</th>
+						<td class="colorBlanco">
+							Uru
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							13º Puesto
+						</th>
+						<td class="colorBlanco">
+							McRevolver
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							14º Puesto
+						</th>
+						<td class="colorBlanco">
+							BoxBox
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							15º Puesto
+						</th>
+						<td class="colorBlanco">
+							Zipi
+						</td>
+					</tr>
+					<tr>
+						<th class="colorBlanco">
+							16º Puesto
+						</th>
+						<td class="colorBlanco">
+							Zape
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+	<div class="container text-center">
+		<h3>Para participar solo tenéis que mandar vuestros contactos a l2gcup@gmail.com y entraréis a la clasificación de la copa más cercana que aún no haya empezado.</h3>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<!--Mazo del Mes-->
+	<div id="mazomes" class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1>El Mazo del Mes</h1>
+		</div>
+	</div>
+	<div class="container text-center thumbnail transparente">
+		<h3>En este caso tenemos el mazo basado en el Sabueso de Lava, una carta muy fuerte en el meta actual.</h3>
+		<img src="img/DeckMes.png" class="img-responsive img-rounded" alt="Mazo Lava Hound" />
+		<h3>El poder de este mazo reside en que el meta actual apenas posee cartas que afecten a unidades aéreas. Nuestra "win condition" será conseguir soltar el Sabueso y apoyarlo con alguna tropa mientras defendemos lo que el rival nos juegue.</h3>
+	</div>
+	<br/>
+
+	<!-- Galería de mazos -->
+	<div id="galeria" class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1>Galería de mazos</h1>
+		</div>
+		<h2>Aquí tenéis una amplia galería de mazos básicos en el meta que podréis personalizar "al gusto".</h2>
+	</div>
+	<br/>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-2">
+				<a href="img/Deck1.jpg" data-toggle="modal" data-target="#deck1">
+					<img src="img/Deck1.jpg" class="img-responsive img-rounded" alt="Deck 1"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck2.jpg" data-toggle="modal" data-target="#deck2">
+					<img src="img/Deck2.jpg" class="img-responsive img-rounded" alt="Deck 2"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck3.jpg" data-toggle="modal" data-target="#deck3">
+					<img src="img/Deck3.jpg" class="img-responsive img-rounded" alt="Deck 3"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck4.jpg" data-toggle="modal" data-target="#deck4">
+					<img src="img/Deck4.jpg" class="img-responsive img-rounded" alt="Deck 4"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck5.jpg" data-toggle="modal" data-target="#deck5">
+					<img src="img/Deck5.jpg" class="img-responsive img-rounded" alt="Deck 5"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-2">
+				<a href="img/Deck6.jpg" data-toggle="modal" data-target="#deck6">
+					<img src="img/Deck6.jpg" class="img-responsive img-rounded" alt="Deck 6"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck7.jpg" data-toggle="modal" data-target="#deck7">
+					<img src="img/Deck7.jpg" class="img-responsive img-rounded" alt="Deck 7"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck8.jpg" data-toggle="modal" data-target="#deck8">
+					<img src="img/Deck8.jpg" class="img-responsive img-rounded" alt="Deck 8"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck9.jpg" data-toggle="modal" data-target="#deck9">
+					<img src="img/Deck9.jpg" class="img-responsive img-rounded" alt="Deck 9"/>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="img/Deck10.jpg" data-toggle="modal" data-target="#deck10">
+					<img src="img/Deck10.jpg" class="img-responsive img-rounded" alt="Deck 10"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<!-- Formulario Solicitud de Mazos -->
+	<div id="solicitud-mazos" class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1>Solicitudes de mazos</h1>
+		</div>
+		<h3 >Siéntete libre de pedir a la comunidad que, mediante unas especificaciones aportadas por ti como las cartas que pueden incluir o
+		el coste medio máximo del mazo, te envíen mazos creados por ellos.</h3>
+	</div>
+	<br/>
+	<div class="container">
+		<div class="text-center">
+			<h2>Solicitudes actuales</h2>
+		</div>
+		<table class="table table-bordered transparenteNegro">
+			<thead>
+				<tr>
+					<th class="colorBlanco">Carta Principal</th>
+					<th class="colorBlanco">Coste</th>
+					<th class="colorBlanco">Arena Máxima</th>
+					<th class="colorBlanco">Formato</th>
+					<th class="colorBlanco">Contacto</th>
+					<th class="colorBlanco">Imagen de mazo actual</th>
+				</tr>
+			</thead>
+			<tbody id="tbody-tabla-solicitud">
+						
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
+		<div class="col-md-offset-3 col-sm-6" id="espacioFormSolicitudMazos">
+			<form id="form-solicitud-mazos">
+				<h2 class="text-center">¡Haz tu petición!</h2>
+				<div class="form-group">
+					<label for="cartaPrincipal">Carta Principal<span class="error" id="error-cartaPrincipal"> *Campo obligatorio</span></label>
+					<input type="text" name="cartaPrincipal" id="cartaPrincipal" class="form-control" placeholder="Construirán el mazo en base a esta carta.">
+				</div>
+				<div class="form-group">
+					<label for="coste">Coste<span class="error" id="error-coste1"> *Campo obligatorio</span><span class="error" id="error-coste2"> *Coste fuera de limites</span></label>
+					<input type="number" min="-10" max="100" name="coste" id="coste" class="form-control" placeholder="Elige un coste entre 2 y 7.">
+				</div>
+				<div class="form-group">
+					<label for="arenaMaxima">Arena Máxima<span class="error" id="error-arenaMaxima"> *Campo obligatorio</span><select class="form-control" name="arenaMaxima" id="arenaMaxima">
+						<option>Elige el límite de arena para las cartas</option>
+						<option>Arena 0 - Entrenamiento</option>
+						<option>Arena 1 - Estadio Duende</option>
+						<option>Arena 2 - Foso de Huesos</option>
+						<option>Arena 3 - Coliseo Bárbaro</option>
+						<option>Arena 4 - Fuerte del P.E.K.K.A.</option>
+						<option>Arena 5 - Valle de Hechizos</option>
+						<option>Arena 6 - Taller de Constructor</option>
+						<option>Arena 7 - Arena Real</option>
+						<option>Arena 8 - Pico Helado</option>
+						<option>Arena 9 - Arena Selvática</option>
+						<option>Arena 10 - Arena Legendaria</option>
+					</select></label>
+				</div>
+				<div class="form-group">
+					<div id="formato">
+						<h5><b>Formato</b></h5>
+							<label class="radio-inline"><input type="radio" name="formato" id="formatoE" value="Estándar">Estándar</label>
+							<label class="radio-inline"><input type="radio" name="formato" id="formatoD" value="Desafío">Mazo de desafío</label>
+							<span id="error-formato" class="error"> *Campo obligatorio</span>
+					</div>	
+				</div>
+				<div class="form-group">
+					<label for="contacto">Contacto<span class="error" id="error-contacto"> *Campo obligatorio</span></label>
+					<input type="email" name="contacto" id="contacto" class="form-control" placeholder="Enviaremos a tu correo los mazos propuestos por la comunidad.">
+				</div>
+				<div class="form-group">
+					<label for="imagenMazo">Imagen de tu mazo actual <small> (Máximo 200*150px)</small><span class="error" id="error-imagenMazo"> *Campo obligatorio</span></label>
+					<input type="file" name="imagenMazo" id="imagenMazo" class="form-control">
+				</div>	
+				<input type="submit" name="submit" value="Crear solicitud de mazo" id="boton-solicitud">
+			</form>
+		</div>
+	</div>
+	<br/>
+
+
+	<!-- Formulario Respuesta de Solicitud de Mazos -->
+	<div id="espacioRespuestaSolicitud1" class="container text-center">
+		<div class="jumbotron fondoRedesAzul colorBlanco">
+			<h1>¡También puedes responder a ellas!</h1>
+		</div>
+		<h3>Todos hemos estado perdidos alguna vez, ¿tú no?. Tienes la oportunidad de colaborar con la comunidad para aprender y enseñar. ¡Aprovéchala!</h3>
+	</div>
+	<div class="container" id="espacioRespuestaSolicitud2">
+		<div class="text-center">
+			<h2>Solicitudes actuales</h2>
+		</div>
+		<table class="table table-bordered transparenteNegro">
+			<thead>
+				<tr>
+					<th class="colorBlanco">Nº de Solicitud</th>
+					<th class="colorBlanco">Carta Principal</th>
+					<th class="colorBlanco">Coste</th>
+					<th class="colorBlanco">Arena Máxima</th>
+					<th class="colorBlanco">Formato</th>
+					<th class="colorBlanco">Contacto</th>
+					<th class="colorBlanco">Mazo Propuesto</th>
+				</tr>
+			</thead>
+			<tbody id="tbody-tabla-respuesta">
+						
+			</tbody>
+		</table>
+
+		<div class="col-md-offset-3 col-sm-6">
+			<form id="form-respuesta-solicitudes">
+				<div class="form-group">
+					<label for="solicitudAResponder">Solicitud a responder<span class="error" id="error-solicitudAResponder"> *Campo obligatorio</span><select class="form-control" name="solicitudAResponder" id="solicitudAResponder">
+						
+					</select></label>
+				</div>
+				<div class="form-group">
+					<label for="mazoAResponder">Solicitud a responder<span class="error" id="error-mazoAResponder"> *Campo obligatorio</span><textarea class="form-control" name="mazoAResponder" id="mazoAResponder" placeholder="Escribe aquí las 8 cartas de tu mazo propuesto."></textarea></label>
+				</div>
+				<input type="submit" name="botonRespuesta" value="Crear propuesta de mazo" id="botonRespuesta">
+			</form>
+		</div>
+	</div>
+
+
+
+	<!-- Modal Deck1 -->
+	<div id="deck1" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico de Gigante</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck1.jpg" class="img-responsive img-rounded" alt="Deck 1">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Deck2 -->
+	<div id="deck2" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck2.jpg" class="img-responsive img-rounded" alt="Deck 2"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck3-->
+	<div id="deck3" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck3.jpg" class="img-responsive img-rounded" alt="Deck 3"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck4 -->
+	<div id="deck4" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck4.jpg" class="img-responsive img-rounded" alt="Deck 4"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck5 -->
+	<div id="deck5" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck5.jpg" class="img-responsive img-rounded" alt="Deck 5"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck6 -->
+	<div id="deck6" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck6.jpg" class="img-responsive img-rounded" alt="Deck 6"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck7 -->
+	<div id="deck7" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Básico</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck7.jpg" class="img-responsive img-rounded" alt="Deck 7"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck8 -->
+	<div id="deck8" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Montapuercos + Príncipe</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck8.jpg" class="img-responsive img-rounded" alt="Deck 8"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck9 -->
+	<div id="deck9" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Gigante + Globo</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck9.jpg" class="img-responsive img-rounded" alt="Deck 9"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Modal Deck10 -->
+	<div id="deck10" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Deck Chispitas + Leñador</h4>
+				</div>
+				<div class="modal-body">
+					<img src="img/Deck10.jpg" class="img-responsive img-rounded" alt="Deck 10"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+	<br/>
+
+</body>
+</html>

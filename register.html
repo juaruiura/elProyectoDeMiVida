@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/estilo.css">
+
+	<script src="js/register.js"></script>
+
+	<!-- Referencia a Firebase para poder conectar la base de datos -->
+	<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+
+	<!-- Canal RSS -->
+	<link rel="alternate" title="RSS" href="rss/rss.xml" type="application/rss+xml" />
+
+	<title>L2Game. Registrate.</title>
+</head>
+
+<body class="fondoStage">
+
+	<!-- Barra de navegación -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<img class="img-responsive" src="img/L2Game.png" alt="Learn2Game"/>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="main.html">Inicio</a></li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Clash Royale<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="clashroyale.html">Portada</a></li>
+							<li><a href="clashroyale.html#copa">Copa L2G</a></li>
+							<li><a href="clashroyale.html#mazomes">Mazo del mes</a></li>
+							<li><a href="clashroyale.html#galeria">Galería de mazos</a></li>
+							<li><a href="clashroyale.html#solicitud-mazos">Solicitudes de mazos</a></li>
+						</ul>
+					</li> 
+					<li><a href="l2minijuego.html">L2Minijuego</a></li> 
+					<li><a href="rss/rss.xml">RSS</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Loguéate</a></li>
+					<li class="active"><a href="register.html"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br/>
+	<br/>
+	<br/>
+
+	<!-- Formulario de registro -->
+	<div class="container">
+		<img class="img-responsive img-rounded" src="img/RegisterHead.jpg" alt="Register Header"/>
+		<br/>
+		<div class="jumbotron transparente2">
+			<form class="form-horizontal" id="formulario">
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="usuario">Nombre de usuario:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="usuario" placeholder="Introduzca el usuario que utilizará para loguearse y por el que le conocerán el resto de usuarios">
+						<span id="error-nombre" class="error">*Campo obligatorio</span>
+					</div>
+
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="correo">Correo Electrónico:</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="correo" name="correo" placeholder="Introduzca la dirección de correo electrónico que deseas vincular a tu cuenta">
+						<span id="error-correo" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="password">Contraseña:</label>
+					<div class="col-sm-10"> 
+						<input type="password" class="form-control" id="password" name="password" placeholder="Introduzca la password que desee utilizar">
+						<span id="error-contr" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="confirmarcontr">Confirmar Contr.:</label>
+					<div class="col-sm-6"> 
+						<input type="password" class="form-control" id="confirmarcontr" placeholder="Introduzca otra vez su password">
+						<span id="error-confirmarcontr" class="error">*Campo obligatorio</span>
+					</div>
+					<div class="col-sm-4">
+						<span id="error-coincidencia" class="error">*Las passwords no coinciden</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco">Sexo:</label>
+					<div class="col-sm-10">
+						<label class="radio-inline colorBlanco"><input type="radio" name="optradio" id="sexoH">Hombre</label>
+						<label class="radio-inline colorBlanco"><input type="radio" name="optradio" id="sexoM">Mujer</label>
+						<br/>
+						<span id="error-sexo" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group"> 
+					<label class="control-label col-sm-2 colorBlanco">Juegos:</label>
+					<div class="col-sm-10">
+						<label class="checkbox-inline colorBlanco"><input type="checkbox" id="juego1" value=""> League of Legends</label>
+						<label class="checkbox-inline colorBlanco"><input type="checkbox" id="juego2"
+						value=""> Hearthstone</label>
+						<label class="checkbox-inline colorBlanco"><input type="checkbox" id="juego3" value=""> Clash Royale</label>
+						<br/>
+						<span id="error-juegos" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="edad">Edad:</label>
+					<div class="col-sm-10">
+						<input type="number" id="edad" name="quantity" min="0" max="1000" placeholder="Edad">
+						<span id="error-edad-2" class="error">*Introduzca una edad entre 14 y 99</span>
+						<br/>
+						<span id="error-edad" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group"> 
+					<label class="control-label col-sm-2 colorBlanco">Fecha Nacimiento:</label>
+					<div class="col-sm-10">
+						<input type="date" name="bday" id="fechaNacim">
+						<br/>
+						<span id="error-fechaNacim" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="juegoPrincipal">Juego principal:</label>
+					<div class="col-sm-10">
+						<label for="juegoPrincipal"><select class="form-control" id="juegoPrincipal">
+							<option>Elija un juego</option>
+							<option>League of Legends</option>
+							<option>Hearthstone</option>
+							<option>Clash Royale</option>
+						</select></label>
+						<br/>
+						<span id="error-juegoPrin" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2 colorBlanco" for="biografia">Biografía:</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="2" id="biografia" placeholder="Añade una breve descripción tuya."></textarea>
+						<span id="error-biografia" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group"> 
+					<div class="col-sm-offset-2 col-sm-10">
+						<label class="checkbox-inline colorBlanco"><input type="checkbox" id="terminos" value=""> Acepto los términos y condiciones de uso.</label>
+						<br/>
+						<span id="error-term" class="error">*Campo obligatorio</span>
+					</div>
+				</div>
+				<div class="form-group"> 
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Enviar solicitud</button>
+						<button type="reset" class="btn btn-danger">Borrar formulario</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<rss version="0.91">
+
+	<channel>
+		<title>Subreddit de Clash Royale</title> 
+		<link>https://www.l2game.com</link> 
+		<description>Información relevante que en L2G consideramos que te será útil.
+		</description> 
+		<language>es-ES</language>
+
+		<item>
+			<title>Subreddit de Clash Royale</title> 
+			<link>https://www.reddit.com/r/ClashRoyale/</link> 
+			<description>
+				Aquí encontraremos una comunidad inmensa de Clash Royale cuando L2G no es suficiente y quieres expandir más tus fronteras y batirte en duelos con otros usuarios.
+			</description> 
+		</item>
+
+		<item>
+			<title>Twitter de Supercell</title> 
+			<link>https://twitter.com/supercellgames</link> 
+			<description>
+				Los "developers" del juego porveen información en exclusiva a través de sus RRSS.
+			</description> 
+		</item>
+
+		<item>
+			<title>Supercell Oficial</title> 
+			<link>http://supercell.com/en/games/clashroyale/</link> 
+			<description>
+				Lá pagina oficial de Supercell provee herramientas muy útiles para el usuario de Clash Royale.
+			</description> 
+		</item>
+
+	</channel>
+</rss>

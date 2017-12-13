@@ -1,0 +1,51 @@
+.carta{
+	height: 190px;
+}
+
+.fondo{
+	background: #008000;
+}
+
+.fixed{
+	position: fixed;
+	bottom: 15px;
+}
+
+.error{
+	color: red;
+	visibility: hidden;
+}
+
+.colorBlanco{
+	color: #FFFFFF;
+}
+
+.transparente{
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.transparente2{
+	background: rgba(255, 255, 255, 0.25);
+}
+
+.transparenteNegro{
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.fondoMain{
+	background-color: #000000;
+}
+
+.fondoClashRoyale{
+	background: url('../img/fondoClashRoyaleBody.jpg');
+	background-attachment: fixed;
+}
+
+.fondoRedesAzul{
+	background: url('../img/clashRoyaleBackground.jpg');
+}
+
+.fondoStage{
+	background: url('../img/stageBackground.jpg');
+	background-attachment: fixed;
+}
